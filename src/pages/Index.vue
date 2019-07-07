@@ -1,20 +1,14 @@
 <template>
   <Layout>
-    
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-    
-    <h1>Hello, world!</h1>
-   
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
+    <div class="index">
+      <div class="index__content">
+        <h1>Thiago Brandão</h1>
 
-    <p class="home-links">
-      <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+        <p>
+          This is where I snapshot my life into bytes
+        </p>
+      </div>
+    </div>
   </Layout>
 </template>
 
@@ -26,8 +20,18 @@ export default {
 }
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
+<style lang="scss" scoped>
+.index {
+  height: 100%;
+  padding-left: 8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__content {
+    h1 {
+      text-transform: uppercase;
+    }
+  }
 }
 </style>
