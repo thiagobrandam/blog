@@ -1,7 +1,35 @@
+// Atomic utility css classes
+// acceptable units:
+// 0.125em, 0.25em, 0.5em, 1em, 1.5em, 2em
+
+// text
 .a-tt-u {
   text-transform: uppercase;
 }
 
+// margin-right
 .a-mr\(0\.25em\) {
   margin-right: 0.25em;
+}
+
+// margin-bottom
+.a-mb\(0\.25em\) {
+  margin-bottom: 0.25em;
+}
+
+.a-mb\(1em\) {
+  margin-bottom: 1em;
+}
+
+.a-mb\(1\.5em\) {
+  margin-bottom: 1.5em;
+}
+
+// margin-top
+.a-mt\(1em\) {
+  margin-top: 1em;
+}
+
+.a-mt\(1\.5em\) {
+  margin-top: 1.5em;
 }

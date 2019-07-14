@@ -3,9 +3,10 @@
 
 import '~/assets/css/destyle.css';
 import '~/assets/css/atomic.scss';
-import DefaultLayout from '~/layouts/Default.vue'
+import '~/assets/css/global.scss';
+import DefaultLayout from '~/layouts/Default.vue';
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout)
+  Vue.component('Layout', DefaultLayout);
 }

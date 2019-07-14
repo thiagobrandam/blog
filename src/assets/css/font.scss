@@ -1,0 +1,42 @@
+/* barlow-condensed-200 - latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 200;
+  font-display: optional;
+  src: url('../fonts/barlow-condensed-v3-latin-200.eot'); /* IE9 Compat Modes */
+  src: local('Barlow Condensed ExtraLight'), local('BarlowCondensed-ExtraLight'),
+       url('../fonts/barlow-condensed-v3-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/barlow-condensed-v3-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/barlow-condensed-v3-latin-200.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/barlow-condensed-v3-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/barlow-condensed-v3-latin-200.svg#BarlowCondensed') format('svg'); /* Legacy iOS */
+}
+/* barlow-condensed-regular - latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('../fonts/barlow-condensed-v3-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Barlow Condensed Regular'), local('BarlowCondensed-Regular'),
+       url('../fonts/barlow-condensed-v3-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/barlow-condensed-v3-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/barlow-condensed-v3-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/barlow-condensed-v3-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/barlow-condensed-v3-latin-regular.svg#BarlowCondensed') format('svg'); /* Legacy iOS */
+}
+/* barlow-condensed-700 - latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('../fonts/barlow-condensed-v3-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Barlow Condensed Bold'), local('BarlowCondensed-Bold'),
+       url('../fonts/barlow-condensed-v3-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/barlow-condensed-v3-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/barlow-condensed-v3-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/barlow-condensed-v3-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/barlow-condensed-v3-latin-700.svg#BarlowCondensed') format('svg'); /* Legacy iOS */
+}

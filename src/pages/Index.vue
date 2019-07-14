@@ -2,7 +2,7 @@
   <Layout>
     <div class="index">
       <div class="index__content">
-        <h1>Thiago Brandão</h1>
+        <h1><b>Thiago Brandão</b></h1>
 
         <p>
           This is where I snapshot my life into bytes
@@ -31,6 +31,10 @@ export default {
   &__content {
     h1 {
       text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.25em;
     }
   }
 }

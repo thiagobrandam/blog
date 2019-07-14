@@ -1,21 +1,23 @@
 <template>
   <div class="layout">
     <div class="layout__sidebar">
-      <nav class="layout__nav">
-        <g-link class="layout__nav-link a-tt-u" to="/">Home</g-link>
-        <g-link class="layout__nav-link a-tt-u" to="/writing">Writing</g-link>
-        <g-link class="layout__nav-link a-tt-u" to="/books">Books</g-link>
-        <g-link class="layout__nav-link a-tt-u" to="/projects">Projects</g-link>
-        <g-link class="layout__nav-link a-tt-u" to="/online-courses">Online Courses</g-link>
-        <g-link class="layout__nav-link a-tt-u" to="/podcasts">Podcasts</g-link>
+      <nav class="layout__nav a-mb(1.5em)">
+        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/">Home</g-link>
+        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/writing">Writing</g-link>
+        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/books">Books</g-link>
+        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/projects">Projects</g-link>
+        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/online-courses">Online Courses</g-link>
+        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/podcasts">Podcasts</g-link>
         <g-link class="layout__nav-link a-tt-u" to="/nihongo">日本語</g-link>
       </nav>
 
-      <hr>
+      <div class='layout__sidebar-separator'>
+        <hr/>
+      </div>
 
-      <div class="layout__sidebar-info-list">
+      <div class="layout__sidebar-info-list a-mt(1.5em)">
         <div class="layout__sidebar-info-list-item">
-          <div class="layout__sidebar-info-list-item-key">
+          <div class="layout__sidebar-info-list-item-key a-mb(0.25em)">
             <g-link class="layout__nav-link" to="/thiagobrandam">thiagobrandam</g-link>
           </div>
           <div class="layout__sidebar-info-list-item-value">
@@ -73,14 +75,6 @@
 
 
 <style lang="scss" scoped>
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  box-sizing: border-box;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-
 .layout {
   max-width: 992px;
   margin: 100px auto 0 auto;
@@ -92,18 +86,24 @@ body {
     padding-left: 1em;
     text-align: right;
 
-    hr {
-      display: inline-block;
-      width: 100px;
-      margin: 0;
-      border: 1px solid black;
+    &-separator {
+      position: relative;
+      height: 1px;
+
+      hr {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 6.25em;
+        margin: 0;
+        border: 1px solid black;
+      }
     }
   }
 
   &__nav {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1em;
 
     &-link {
       font-weight: bold;
@@ -121,7 +121,6 @@ body {
   }
 
   &__sidebar-info-list {
-    margin-top: 1em;
 
     &-item {
       margin-bottom: 0.5em;
