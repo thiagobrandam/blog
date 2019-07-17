@@ -4,9 +4,9 @@
       <div class="index__content">
         <h1><b>Thiago Brandão</b></h1>
 
-        <p>
+        <span>
           This is where I snapshot my life into bytes
-        </p>
+        </span>
       </div>
     </div>
   </Layout>

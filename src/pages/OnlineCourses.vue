@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <h1>Online Courses</h1>
-    <p>
+    <p class='a-mt(1em)'>
       Online Courses that I might took someday or that I already took
       and my rating.
     </p>

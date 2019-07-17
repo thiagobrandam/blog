@@ -15,5 +15,9 @@ module.exports = {
     svgRule
       .use('vue-svg-loader')
       .loader('vue-svg-loader')
+  },
+  icon: {
+    favicon: './src/assets/images/favicon.png',
+    touchicon: './src/assets/images/apple-touch-icon.png'
   }
 }
