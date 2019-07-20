@@ -18,7 +18,7 @@
       <div class="layout__sidebar-info-list a-mt(1.5em)">
         <div class="layout__sidebar-info-list-item">
           <div class="layout__sidebar-info-list-item-key a-mb(0.25em)">
-            <g-link class="layout__nav-link" to="/thiagobrandam">thiagobrandam</g-link>
+            <g-link class="layout__nav-link a-tc-u" to="/thiagobrandam">thiagobrandam</g-link>
           </div>
           <div class="layout__sidebar-info-list-item-value">
             <a class='a-mr(0.25em)' target="_blank" href="https://github.com/thiagobrandam" rel="noopener noreferer">
@@ -107,7 +107,6 @@
 
     &-link {
       font-weight: bold;
-      text-decoration: underline;
 
       &--uppercased {
         text-transform: uppercase;

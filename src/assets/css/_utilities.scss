@@ -7,6 +7,10 @@
   text-transform: uppercase;
 }
 
+.a-tc-u {
+  text-decoration: underline;
+}
+
 // margin-right
 .a-mr\(0\.25em\) {
   margin-right: 0.25em;
@@ -26,6 +30,10 @@
 }
 
 // margin-top
+.a-mt\(0\.5em\) {
+  margin-top: 0.5em;
+}
+
 .a-mt\(1em\) {
   margin-top: 1em;
 }
