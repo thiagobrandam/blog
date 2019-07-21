@@ -1,8 +1,13 @@
 # TODO list
 
-* Add sitemap
+* Add sitemap [✅]
 * Choose serif font-family [✅]
 * Choose sans-serif font-family [✅]
 * Deal with responsiveness []
-* Add syntax-hightlight css []
+* User-friendly mobile version
+* Add syntax-hightlight css [✅]
 * Favicon & friends [✅]
+* Add dynamic metadata plugin []
+* Add 404 page with randomized phrasing
+* Consider using tailwindcss
+* Add pagination
