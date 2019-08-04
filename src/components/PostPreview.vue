@@ -24,3 +24,8 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+p.post-preview__description {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+</style>

@@ -1,61 +1,58 @@
 <template>
   <div class="layout">
-    <div class="layout__sidebar">
-      <nav class="layout__nav a-mb(1.5em)">
-        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/">Home</g-link>
-        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/writing">Writing</g-link>
-        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/books">Books</g-link>
-        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/projects">Projects</g-link>
-        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/online-courses">Online Courses</g-link>
-        <g-link class="layout__nav-link a-tt-u a-mb(0.25em)" to="/podcasts">Podcasts</g-link>
-        <g-link class="layout__nav-link a-tt-u" to="/nihongo">日本語</g-link>
-      </nav>
+    <div id="overlay"><slot name="overlay"></slot></div>
 
-      <div class='layout__sidebar-separator'>
-        <hr/>
-      </div>
+    <nav>
+      <nav-button id='home' to="/">Home</nav-button>
+      <nav-button id='writing' to="/writing">Writing</nav-button>
+      <nav-button id='books' to="/books">Books</nav-button>
+      <nav-button id='projects' to="/projects">Projects</nav-button>
+      <nav-button id='online-courses' to="/online-courses">Online Courses</nav-button>
+      <nav-button id='podcasts' to="/podcasts">Podcasts</nav-button>
+      <nav-button id='nihongo' to="/nihongo">日本語</nav-button>
+    </nav>
 
-      <div class="layout__sidebar-info-list a-mt(1.5em)">
-        <div class="layout__sidebar-info-list-item">
-          <div class="layout__sidebar-info-list-item-key a-mb(0.25em)">
-            <g-link class="layout__nav-link a-tc-u" to="/thiagobrandam">thiagobrandam</g-link>
-          </div>
-          <div class="layout__sidebar-info-list-item-value">
-            <a class='a-mr(0.25em)' target="_blank" href="https://github.com/thiagobrandam" rel="noopener noreferer">
-              <github-icon class="layout__sidebar-social"></github-icon>
-            </a>
-
-            <a class='a-mr(0.25em)' target="_blank" href="https://twitter.com/thiagobrandam" rel="noopener noreferer">
-              <twitter-icon class="layout__sidebar-social"></twitter-icon>
-            </a>
-
-            <a target="_blank" href="https://linkedin.com/in/thiagobrandam/" rel="noopener noreferer">
-              <linked-in-icon class="layout__sidebar-social"></linked-in-icon>
-            </a>
-          </div>
+    <aside class='sidebar-info-list'>
+      <div class="sidebar-info-list-item">
+        <div class="sidebar-info-list-item-key a-mb(0.25em)">
+          <g-link class="nav-link a-tc-u" to="/thiagobrandam">thiagobrandam</g-link>
         </div>
-        <div class="layout__sidebar-info-list-item">
-          <div class="layout__sidebar-info-list-item-key">
-            location
-          </div>
-          <div class="layout__sidebar-info-list-item-value">
-            são paulo, brazil
-          </div>
-        </div>
-        <div class="layout__sidebar-info-list-item">
-          <div class="layout__sidebar-info-list-item-key">
-            contact
-          </div>
-          <div class="layout__sidebar-info-list-item-value">
-            thiagobrandam(at)
-          </div>
-          <div class="layout__sidebar-info-list-item-value">
-            gmail(dot)com
-          </div>
+        <div class="sidebar-info-list-item-value">
+          <a class='a-mr(0.25em)' target="_blank" href="https://github.com/thiagobrandam" rel="noopener noreferer" aria-label="my github">
+            <github-icon class="sidebar-social"></github-icon>
+          </a>
+
+          <a class='a-mr(0.25em)' target="_blank" href="https://twitter.com/thiagobrandam" rel="noopener noreferer" aria-label="my twitter">
+            <twitter-icon class="sidebar-social"></twitter-icon>
+          </a>
+
+          <a target="_blank" href="https://linkedin.com/in/thiagobrandam/" rel="noopener noreferer" aria-label="my linkedin">
+            <linked-in-icon class="sidebar-social"></linked-in-icon>
+          </a>
         </div>
       </div>
-    </div>
-    <main class='layout__main'>
+      <div class="sidebar-info-list-item">
+        <div class="sidebar-info-list-item-key">
+          location
+        </div>
+        <div class="sidebar-info-list-item-value">
+          são paulo, brazil
+        </div>
+      </div>
+      <div class="sidebar-info-list-item">
+        <div class="sidebar-info-list-item-key">
+          contact
+        </div>
+        <div class="sidebar-info-list-item-value">
+          thiagobrandam(at)
+        </div>
+        <div class="sidebar-info-list-item-value">
+          gmail(dot)com
+        </div>
+      </div>
+    </aside>
+
+    <main>
       <slot></slot>
     </main>
   </div>
@@ -65,62 +62,131 @@
   import TwitterIcon from '~/assets/images/twitter.svg';
   import GithubIcon from '~/assets/images/github.svg';
   import LinkedInIcon from '~/assets/images/linkedin.svg';
+  import MainTitle from '../components/MainTitle.vue';
+  import NavButton from '../components/NavButton.vue';
 
   export default {
     components: {
-      TwitterIcon, GithubIcon, LinkedInIcon
+      TwitterIcon,
+      GithubIcon,
+      LinkedInIcon,
+      MainTitle,
+      NavButton
     }
   }
 </script>
 
 
 <style lang="scss" scoped>
+@import "~/assets/css/_mixins.scss";
+
 .layout {
-  max-width: 992px;
-  margin: 100px auto 0 auto;
-  display: flex;
+  height: 100%;
+  display: grid;
 
-  &__sidebar {
-    flex: 1 1 25%;
-    padding-right: 1em;
-    padding-left: 1em;
-    text-align: right;
+  nav {
+    grid-area: nav;
+  }
 
-    &-separator {
-      position: relative;
-      height: 1px;
+  main {
+    grid-area: main;
+  }
 
-      hr {
-        display: block;
-        position: absolute;
-        right: 0;
-        width: 6.25em;
-        margin: 0;
-        border: 1px solid black;
+  aside {
+    grid-area: aside;
+  }
+
+  @include desktop {
+    max-width: 992px;
+    margin: 100px auto 0 auto;
+
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "nav main"
+                         "aside main";
+    column-gap: 3em;
+    row-gap: 3em;
+
+    nav, aside {
+      justify-self: end;
+      text-align: right;
+    }
+
+    nav {
+      display: grid;
+      row-gap: .25em;
+    }
+
+    #overlay {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+
+  @include mobile {
+    padding: 1em;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: "header"
+                         "nav"
+                         "main";
+    row-gap: 1em;
+
+    aside {
+      display: none;
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: repeat(12, auto);
+      grid-template-rows: auto auto;
+      row-gap: .5em;
+      column-gap: .5em;
+
+      #home {
+        grid-column: span 3;
+      }
+      #writing {
+        grid-column: span 3;
+      }
+      #books {
+        grid-column: span 3;
+      }
+      #projects {
+        grid-column: span 3;
+      }
+      #online-courses {
+        grid-column: span 4;
+      }
+      #podcasts {
+        grid-column: span 4;
+      }
+      #nihongo {
+        grid-column: span 4;
       }
     }
   }
 
-  &__nav {
-    display: flex;
-    flex-direction: column;
+  .separator {
+    position: relative;
+    height: 1px;
 
-    &-link {
-      font-weight: bold;
-
-      &--uppercased {
-        text-transform: uppercase;
-      }
+    hr {
+      display: block;
+      position: absolute;
+      right: 0;
+      width: 6.25em;
+      margin: 0;
+      border: 1px solid black;
     }
   }
 
-  &__sidebar-social {
+  .sidebar-social {
     width: 1.25em;
     height: 1.25em;
   }
 
-  &__sidebar-info-list {
-
+  .sidebar-info-list {
     &-item {
       margin-bottom: 0.5em;
     }
@@ -132,12 +198,6 @@
     &-item-value {
       font-size: 0.875em;
     }
-  }
-
-  &__main {
-    flex: 1 1 75%;
-    padding-right: 1em;
-    padding-left: 1em;
   }
 }
 </style>
