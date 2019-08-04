@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>Writing</h1>
+    <h1 class='a-tt-u a-fw-b'>Writing</h1>
 
     <div class='posts a-mt(1.5em)'>
       <post-preview v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>

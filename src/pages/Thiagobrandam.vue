@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>Why thiagobrandam ?</h1>
+    <h1 class='a-tt-u a-fw-b'>Why thiagobrandam ?</h1>
     <p class='a-mt(1em)'>
       My full name is Thiago Brandão Damasceno. 13-year-old me thought
       it was clever to pick a subset of each name (thiago+bran+dam) and use

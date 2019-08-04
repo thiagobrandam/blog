@@ -11,3 +11,4 @@
 * Add 404 page with randomized phrasing
 * Consider using tailwindcss
 * Add pagination
+* Use CSS grid instead of CSS flex for layout
