@@ -33,6 +33,10 @@
           linkedin.com/in/thiagobrandam
         </a>
       </div>
+      <div class='info-item'>
+        <me-icon height="16px"></me-icon>
+        <g-link class="a-tc-u" to="/thiagobrandam">? thiagobrandam ?</g-link>
+      </div>
     </div>
   </Layout>
 </template>
@@ -45,6 +49,7 @@ import AtIcon from '~/assets/images/at.svg';
 import TwitterIcon from '~/assets/images/twitter.svg';
 import GithubIcon from '~/assets/images/github.svg';
 import LinkedInIcon from '~/assets/images/linkedin.svg';
+import MeIcon from '~/assets/images/me.svg';
 
 export default {
   metaInfo: {
@@ -56,7 +61,8 @@ export default {
     AtIcon,
     TwitterIcon,
     GithubIcon,
-    LinkedInIcon
+    LinkedInIcon,
+    MeIcon
   }
 }
 </script>
@@ -86,13 +92,13 @@ export default {
   }
 
   display: grid;
-  grid-template-rows: repeat(12,1fr);
+  grid-template-rows: repeat(24,1fr);
   justify-items: center;
   align-items: center;
 
   .main-title {
     text-align: center;
-    grid-row: 1 / 3;
+    grid-row: 1 / 6;
   }
 
   .info-item {
