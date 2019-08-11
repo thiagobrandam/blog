@@ -92,13 +92,13 @@ export default {
   }
 
   display: grid;
-  grid-template-rows: repeat(24,1fr);
+  grid-template-rows: repeat(12,1fr);
   justify-items: center;
   align-items: center;
 
   .main-title {
     text-align: center;
-    grid-row: 1 / 6;
+    grid-row: 1 / 4;
   }
 
   .info-item {
