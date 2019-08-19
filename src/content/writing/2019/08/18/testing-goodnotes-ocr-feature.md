@@ -8,7 +8,7 @@ slug: testing-goodnotes-ocr-feature
 description: A blog post to test GoodNotes' OCR feature
 ---
 
-[GoodNotes](https://www.goodnotes.com/) is a fantastic note-taking app made for iPad. It's a simple app that substitutes the use of physical notes it's particularly useful to organize your thoughts into structured virtual spaces. Not only that, but you can even import PDF files and make notes on them, as you would do on real books, but with way less guilt. It also has seamless integration with Apple Pencil though you can use the app without it (the experience is way more comfortable if you have one though).
+[GoodNotes](https://www.goodnotes.com/) is a fantastic note-taking app made for iPad. It's a simple app that substitutes the use of physical notes and it's particularly useful to organize your thoughts into structured virtual spaces. Not only that, but you can even import PDF files and make notes on them, as you would do on real books, but with way less guilt. It also has seamless integration with Apple Pencil though you can use the app without it (the experience is way more comfortable if you have one though).
 
 Anyway, I've been using GoodNotes on my daily job at [Classpert](https://classpert.com) to track down our activities and to brainstorm product ideas and I realized how much I prefer hand-writing. It's faster than typing to me due to my fat fingers and dislexia. I wrote the first blog post using GoodNotes and then manually digitalized the whole text, much to my grief, completely ignorant that it had an OCR feature builtin. Then when I found out it had one, I decided to test it and see how it would play out. 
 
