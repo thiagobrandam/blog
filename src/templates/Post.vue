@@ -76,5 +76,10 @@ query Post ($path: String!) {
   /deep/ p {
     margin-top: 1em;
   }
+
+  /deep/ img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 </style>
