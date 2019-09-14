@@ -1,5 +1,5 @@
 <template>
-  <div class='a-ta-c a-tt-u'>
+  <div class='a-tt-u'>
     <g-link class='nav-btn' :to='to'>
       <div class='nav-btn__slot'><slot></slot></div>
     </g-link>
