@@ -5,7 +5,7 @@
         {{ $page.post.title }}
       </h1>
 
-      <post-meta :post="$page.post" />
+      <post-meta class='post-title__meta' :post="$page.post" />
     </div>
 
     <div class="post content-box">
@@ -37,6 +37,7 @@ export default {
       meta: [
         {
           name: 'description',
+          key: 'description',
           content: this.$page.post.description
         }
       ]
@@ -68,6 +69,17 @@ query Post ($path: String!) {
 </page-query>
 
 <style lang="scss" scoped>
+.post-title {
+  .post-title__text {
+    font-weight: bold;
+  }
+  .post-title__meta {
+    margin-top: 0.5em;
+  }
+}
+.post {
+  margin-top: 1.5em;
+}
 .post__content {
   /deep/ a {
     text-decoration: underline;

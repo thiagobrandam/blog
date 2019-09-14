@@ -3,13 +3,13 @@
     <div id="overlay"><slot name="overlay"></slot></div>
 
     <nav>
-      <nav-button id='home' to="/">Home</nav-button>
-      <nav-button id='writing' to="/writing">Writing</nav-button>
-      <nav-button id='books' to="/books">Books</nav-button>
-      <nav-button id='projects' to="/projects">Projects</nav-button>
-      <nav-button id='online-courses' to="/online-courses">Online Courses</nav-button>
-      <nav-button id='podcasts' to="/podcasts">Podcasts</nav-button>
-      <nav-button id='nihongo' to="/nihongo">日本語</nav-button>
+      <nav-btn id='home' to="/">Home</nav-btn>
+      <nav-btn id='writing' to="/writing">Writing</nav-btn>
+      <nav-btn id='books' to="/books">Books</nav-btn>
+      <nav-btn id='projects' to="/projects">Projects</nav-btn>
+      <nav-btn id='online-courses' to="/online-courses">Online Courses</nav-btn>
+      <nav-btn id='podcasts' to="/podcasts">Podcasts</nav-btn>
+      <nav-btn id='nihongo' to="/nihongo">日本語</nav-btn>
     </nav>
 
     <aside class='sidebar-info-list'>
@@ -63,7 +63,7 @@
   import GithubIcon from '~/assets/images/github.svg';
   import LinkedInIcon from '~/assets/images/linkedin.svg';
   import MainTitle from '../components/MainTitle.vue';
-  import NavButton from '../components/NavButton.vue';
+  import NavBtn from '../components/NavBtn.vue';
 
   export default {
     components: {
@@ -71,7 +71,7 @@
       GithubIcon,
       LinkedInIcon,
       MainTitle,
-      NavButton
+      NavBtn
     }
   }
 </script>

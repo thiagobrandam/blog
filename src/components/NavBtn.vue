@@ -1,7 +1,7 @@
 <template>
-  <div class='-a-ta-c a-tt-u'>
-    <g-link class='nav-button' :to='to'>
-      <div class='nav-button__slot'><slot></slot></div>
+  <div class='a-ta-c a-tt-u'>
+    <g-link class='nav-btn' :to='to'>
+      <div class='nav-btn__slot'><slot></slot></div>
     </g-link>
   </div>
 </template>
@@ -20,8 +20,8 @@ export default {
 <style lang="scss">
 @import "~/assets/css/_mixins.scss";
 
-.nav-button {
-  $navbutton: &;
+.nav-btn {
+  $self: &;
 
   box-sizing: border-box;
   display: inline-block;
@@ -38,7 +38,7 @@ export default {
     }
 
     &.active--exact, &:hover {
-      #{$navbutton}__slot {
+      #{$self}__slot {
         background-color: black;
         color: white;
       }

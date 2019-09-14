@@ -7,7 +7,7 @@
 * User-friendly mobile version [✅]
 * Add syntax-hightlight css [✅]
 * Favicon & friends [✅]
-* Add dynamic metadata plugin []
+* Add dynamic metadata plugin [✅]
 * Add 404 page with randomized phrasing []
 * Consider using tailwindcss []
 * Add pagination []
