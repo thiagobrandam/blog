@@ -3,7 +3,7 @@
     <div id="overlay"><slot name="overlay"></slot></div>
 
     <nav>
-      <nav-btn id='home' to="/">Home</nav-btn>
+      <nav-btn id='home' to="/" :exact="true">Home</nav-btn>
       <nav-btn id='writing' to="/writing">Writing</nav-btn>
       <nav-btn id='books' to="/books">Books</nav-btn>
       <nav-btn id='projects' to="/projects">Projects</nav-btn>

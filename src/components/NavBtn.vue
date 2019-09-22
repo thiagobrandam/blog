@@ -1,6 +1,6 @@
 <template>
   <div class='a-tt-u'>
-    <g-link class='nav-btn' :to='to'>
+    <g-link class='nav-btn' :to='to' :exact="exact">
       <div class='nav-btn__slot'><slot></slot></div>
     </g-link>
   </div>
@@ -12,6 +12,10 @@ export default {
     to: {
       type: String,
       required: true
+    },
+    exact: {
+      type: Boolean,
+      required: false
     }
   }
 }
@@ -37,7 +41,7 @@ export default {
       text-align: center;
     }
 
-    &.active--exact, &:hover {
+    &.active, &:hover {
       #{$self}__slot {
         background-color: map-get($color, "standout");
         color: white;
