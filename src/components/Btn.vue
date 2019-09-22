@@ -18,6 +18,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~/assets/css/_variables.scss";
+
 .btn {
   $self: &;
 
@@ -26,7 +28,7 @@ export default {
 
   &__slot {
     display: table;
-    border: 1px solid black;
+    border: 1px solid map-get($color, "standout");
     padding: 0.25em 0.5em;
     white-space:nowrap;
     width: 100%;
@@ -35,7 +37,7 @@ export default {
 
   &.active--exact, &:hover {
     #{$self}__slot {
-      background-color: black;
+      background-color: map-get($color, "standout");
       color: white;
     }
   }

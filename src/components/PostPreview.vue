@@ -30,6 +30,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/css/_variables.scss";
+
 .post-preview__title {
   font-weight: bold;
 }
@@ -40,6 +42,8 @@ export default {
   font-family: 'Barlow Condensed', sans-serif;
   margin-top: 1em;
   margin-bottom: 1em;
+  color: map-get($color, "standout");
+
 }
 .post-preview + .post-preview {
   margin-top: 2em;

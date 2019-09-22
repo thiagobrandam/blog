@@ -14,8 +14,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/css/_variables.scss";
+
 .post-meta {
   font-size: .8em;
   opacity: .8;
+  color: black;
 }
 </style>

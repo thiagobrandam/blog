@@ -177,7 +177,7 @@
       right: 0;
       width: 6.25em;
       margin: 0;
-      border: 1px solid black;
+      border: 1px solid map-get($color, "standout");
     }
   }
 
