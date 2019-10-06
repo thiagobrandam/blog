@@ -52,7 +52,7 @@ export default {
 
 <page-query>
 query Post ($path: String!) {
-  post: post (path: $path) {
+  post (path: $path) {
     title
     path
     date (format: "D MMMM YYYY")
@@ -80,6 +80,7 @@ query Post ($path: String!) {
 .post {
   margin-top: 1.5em;
 }
+
 .post__content {
   /deep/ a {
     text-decoration: underline;

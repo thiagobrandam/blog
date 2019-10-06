@@ -12,3 +12,4 @@
 * Consider using tailwindcss []
 * Add pagination []
 * Use CSS grid instead of CSS flex for layout [✅]
+* Style links according to https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links

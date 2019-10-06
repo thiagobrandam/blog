@@ -14,16 +14,21 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Post',
-        path: 'src/content/**/*.md',
-        route: '/:section/:year/:month/:day/:slug',
+        path: 'src/content/writing/**/*.md',
         refs: {
           // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
           tags: {
             typeName: 'Tag',
-            route: '/tags/:id',
             create: true
           }
         }
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Project',
+        path: 'src/content/projects/*.md',
       }
     },
     {
@@ -48,6 +53,9 @@ module.exports = {
           '/projects': {
             changefreq: 'weekly'
           },
+          '/projects/*': {
+            changefreq: 'weekly'
+          },
           '/nihongo': {
             changefreq: 'weekly'
           },
@@ -58,6 +66,11 @@ module.exports = {
       }
     }
   ],
+  templates: {
+    Post: '/writing/:year/:month/:day/:slug',
+    Tag: '/tags/:id',
+    Project: '/projects/:id'
+  },
   transformers: {
     //Add markdown support to all file-system sources
     remark: {
