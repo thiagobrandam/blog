@@ -1,9 +1,13 @@
 <template>
   <Layout>
-    <h1 class='a-tt-u a-fw-b'>Writing</h1>
+    <h1 class="a-tt-u a-fw-b">Writing</h1>
 
-    <div class='posts a-mt(1.5em)'>
-      <post-preview v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
+    <div class="posts a-mt(1.5em)">
+      <post-preview
+        v-for="edge in $page.posts.edges"
+        :key="edge.node.id"
+        :post="edge.node"
+      />
     </div>
   </Layout>
 </template>
@@ -16,6 +20,7 @@
         id
         title
         content
+        slug
         path
         tags {
           id
@@ -38,14 +43,14 @@
 </page-query>
 
 <script>
-import PostPreview from '../components/PostPreview.vue';
+  import PostPreview from "../components/PostPreview.vue";
 
-export default {
-  metaInfo: {
-    title: 'Writing'
-  },
-  components: {
-    PostPreview
-  }
-}
+  export default {
+    metaInfo: {
+      title: "Writing"
+    },
+    components: {
+      PostPreview
+    }
+  };
 </script>
