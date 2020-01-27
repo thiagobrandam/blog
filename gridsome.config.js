@@ -6,91 +6,95 @@
 
 module.exports = {
   siteName: "thiagobrandam",
-  siteUrl: 'https://thiagobrandam.com',
-  siteDescription: 'This is the place where I snapshot my life into bytes.',
+  siteUrl: "https://thiagobrandam.com",
+  siteDescription: "This is the place where I snapshot my life into bytes.",
   plugins: [
     {
       // Create posts from markdown files
-      use: '@gridsome/source-filesystem',
+      use: "@gridsome/source-filesystem",
       options: {
-        typeName: 'Post',
-        path: 'src/content/writing/**/*.md',
+        typeName: "Post",
+        path: "src/content/writing/**/*.md",
         refs: {
           // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
           tags: {
-            typeName: 'Tag',
+            typeName: "Tag",
             create: true
           }
         }
       }
     },
     {
-      use: '@gridsome/source-filesystem',
+      use: "@gridsome/source-filesystem",
       options: {
-        typeName: 'Project',
-        path: 'src/content/projects/*.md',
+        typeName: "Project",
+        path: "src/content/projects/*.md"
       }
     },
     {
-      use: '@gridsome/plugin-sitemap',
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Nihongo",
+        path: "src/content/nihongo/*.md"
+      }
+    },
+    {
+      use: "@gridsome/plugin-sitemap",
       options: {
         config: {
-          '/': {
-            changefreq: 'monthly'
+          "/": {
+            changefreq: "monthly"
           },
-          '/writing': {
-            changefreq: 'weekly'
+          "/writing": {
+            changefreq: "weekly"
           },
-          '/writing/*': {
-            changefreq: 'weekly'
+          "/writing/*": {
+            changefreq: "weekly"
           },
-          '/online-courses': {
-            changefreq: 'weekly'
+          "/online-courses": {
+            changefreq: "weekly"
           },
-          '/podcasts': {
-            changefreq: 'weekly'
+          "/podcasts": {
+            changefreq: "weekly"
           },
-          '/projects': {
-            changefreq: 'weekly'
+          "/projects": {
+            changefreq: "weekly"
           },
-          '/projects/*': {
-            changefreq: 'weekly'
+          "/projects/*": {
+            changefreq: "weekly"
           },
-          '/nihongo': {
-            changefreq: 'weekly'
+          "/nihongo": {
+            changefreq: "weekly"
           },
-          '/thiagobrandam': {
-            changefreq: 'monthly'
+          "/thiagobrandam": {
+            changefreq: "monthly"
           }
         }
       }
     }
   ],
   templates: {
-    Post: '/writing/:year/:month/:day/:slug',
-    Tag: '/tags/:id',
-    Project: '/projects/:id'
+    Post: "/writing/:year/:month/:day/:slug",
+    Tag: "/tags/:id",
+    Project: "/projects/:id",
+    Nihongo: "/nihongo/:slug"
   },
   transformers: {
     //Add markdown support to all file-system sources
     remark: {
-      externalLinksTarget: '_blank',
-      externalLinksRel: ['noopener', 'noreferrer'],
-      anchorClassName: 'icon icon-link',
-      plugins: [
-        '@gridsome/remark-prismjs'
-      ]
+      externalLinksTarget: "_blank",
+      externalLinksRel: ["noopener", "noreferrer"],
+      anchorClassName: "icon icon-link",
+      plugins: ["@gridsome/remark-prismjs"]
     }
   },
   chainWebpack: config => {
-    const svgRule = config.module.rule('svg')
-    svgRule.uses.clear()
-    svgRule
-      .use('vue-svg-loader')
-      .loader('vue-svg-loader')
+    const svgRule = config.module.rule("svg");
+    svgRule.uses.clear();
+    svgRule.use("vue-svg-loader").loader("vue-svg-loader");
   },
   icon: {
-    favicon: './src/assets/images/favicon.png',
-    touchicon: './src/assets/images/apple-touch-icon.png'
+    favicon: "./src/assets/images/favicon.png",
+    touchicon: "./src/assets/images/apple-touch-icon.png"
   }
-}
+};

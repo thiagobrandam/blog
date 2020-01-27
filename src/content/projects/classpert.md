@@ -2,7 +2,8 @@
 id: classpert
 name: Classpert
 published: true
-description: 'An Online Course Search Engine'
+section: projects
+description: "An Online Course Search Engine"
 logo: ./classpert/logo.svg
 ---
 
