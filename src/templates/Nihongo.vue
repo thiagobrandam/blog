@@ -76,6 +76,9 @@ query Nihongo ($path: String!) {
   .post {
     margin-top: 1.5em;
   }
+  .post.content-box {
+    margin-bottom: 3em;
+  }
 
   .post__content {
     /deep/ a {
