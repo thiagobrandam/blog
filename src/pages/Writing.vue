@@ -2,7 +2,7 @@
   <Layout>
     <h1 class="a-tt-u a-fw-b">Writing</h1>
 
-    <div class="posts a-mt(1.5em)">
+    <div class="posts a-mt(1.5em) a-mb(2em)">
       <post-preview
         v-for="edge in $page.posts.edges"
         :key="edge.node.id"
@@ -43,14 +43,14 @@
 </page-query>
 
 <script>
-  import PostPreview from "../components/PostPreview.vue";
+import PostPreview from "../components/PostPreview.vue";
 
-  export default {
-    metaInfo: {
-      title: "Writing"
-    },
-    components: {
-      PostPreview
-    }
-  };
+export default {
+  metaInfo: {
+    title: "Writing"
+  },
+  components: {
+    PostPreview
+  }
+};
 </script>

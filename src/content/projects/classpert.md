@@ -19,8 +19,8 @@ You have MOOC providers like Udemy, with its focus on single-course, almost alwa
 
 Given that many options, it's no wonder that it's a mess for anyone to look for the perfect choice. Google works but barely since it's not focused on MOOCs. It's only natural that there must be some place where you can search specifically for MOOCs, on many providers. Enter [Classpert.com](https://classpert.com).
 
-On [Classpert.com](https://classpert.com), you can search for the course's name, filter based on price range, provider, language options and check information like duration, pace and even watch a video preview. We currently offer about 150K online courses from 26 e-learning platforms (and growing).
+On [Classpert.com](https://classpert.com/search), you can search for the course's name, filter based on price range, provider, language options and check information like duration, pace and even watch a video preview. We currently offer about 150K online courses from 26 e-learning platforms (and growing).
 
 It's a wonderful website that was primarily born out of our necessity to search for online courses and not be totally overwhelmed by that. We believe this tool will help others too!
 
-If you have any questions regarding [Classpert.com](https://classpert.com), drop us a message here, we'll be glad to talk to you, even if it's just a mere hello :)
+If you have any questions regarding [Classpert.com](https://classpert.com), drop us a message [here](https://classpert.com/contact-us), we'll be glad to talk to you, even if it's just a mere hello :)
