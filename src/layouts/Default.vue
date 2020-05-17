@@ -79,147 +79,148 @@
 </template>
 
 <script>
-  import TwitterIcon from "~/assets/images/twitter.svg";
-  import GithubIcon from "~/assets/images/github.svg";
-  import LinkedInIcon from "~/assets/images/linkedin.svg";
-  import MainTitle from "../components/MainTitle.vue";
-  import NavBtn from "../components/NavBtn.vue";
+import TwitterIcon from "~/assets/images/twitter.svg";
+import GithubIcon from "~/assets/images/github.svg";
+import LinkedInIcon from "~/assets/images/linkedin.svg";
+import MainTitle from "../components/MainTitle.vue";
+import NavBtn from "../components/NavBtn.vue";
 
-  export default {
-    components: {
-      TwitterIcon,
-      GithubIcon,
-      LinkedInIcon,
-      MainTitle,
-      NavBtn
-    }
-  };
+export default {
+  components: {
+    TwitterIcon,
+    GithubIcon,
+    LinkedInIcon,
+    MainTitle,
+    NavBtn
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "~/assets/css/_mixins.scss";
+@import "~/assets/css/_mixins.scss";
 
-  .layout {
-    height: 100%;
-    display: grid;
+.layout {
+  height: 100%;
+  display: grid;
+
+  nav {
+    grid-area: nav;
+  }
+
+  main {
+    grid-area: main;
+    min-width: 0;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  @include desktop {
+    max-width: 992px;
+    margin: 100px auto 0 auto;
+
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "nav main"
+      "aside main";
+    column-gap: 3em;
+    row-gap: 3em;
+
+    nav,
+    aside {
+      justify-self: end;
+      text-align: right;
+    }
 
     nav {
-      grid-area: nav;
+      display: grid;
+      row-gap: 0.25em;
     }
 
-    main {
-      grid-area: main;
+    #overlay {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
     }
+  }
+
+  @include mobile {
+    padding: 1em;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main";
+    row-gap: 1em;
 
     aside {
-      grid-area: aside;
+      display: none;
     }
 
-    @include desktop {
-      max-width: 992px;
-      margin: 100px auto 0 auto;
+    nav {
+      display: grid;
+      grid-template-columns: repeat(12, auto);
+      grid-template-rows: auto auto;
+      row-gap: 0.5em;
+      column-gap: 0.5em;
 
-      grid-template-columns: 1fr 3fr;
-      grid-template-rows: auto 1fr;
-      grid-template-areas:
-        "nav main"
-        "aside main";
-      column-gap: 3em;
-      row-gap: 3em;
-
-      nav,
-      aside {
-        justify-self: end;
-        text-align: right;
+      #home {
+        grid-column: span 3;
       }
-
-      nav {
-        display: grid;
-        row-gap: 0.25em;
+      #writing {
+        grid-column: span 3;
       }
-
-      #overlay {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
+      #books {
+        grid-column: span 3;
       }
-    }
-
-    @include mobile {
-      padding: 1em;
-      grid-template-columns: 100%;
-      grid-template-rows: auto auto 1fr;
-      grid-template-areas:
-        "header"
-        "nav"
-        "main";
-      row-gap: 1em;
-
-      aside {
-        display: none;
+      #projects {
+        grid-column: span 3;
       }
-
-      nav {
-        display: grid;
-        grid-template-columns: repeat(12, auto);
-        grid-template-rows: auto auto;
-        row-gap: 0.5em;
-        column-gap: 0.5em;
-
-        #home {
-          grid-column: span 3;
-        }
-        #writing {
-          grid-column: span 3;
-        }
-        #books {
-          grid-column: span 3;
-        }
-        #projects {
-          grid-column: span 3;
-        }
-        #online-courses {
-          grid-column: span 4;
-        }
-        #podcasts {
-          grid-column: span 4;
-        }
-        #nihongo {
-          grid-column: span 4;
-        }
+      #online-courses {
+        grid-column: span 4;
       }
-    }
-
-    .separator {
-      position: relative;
-      height: 1px;
-
-      hr {
-        display: block;
-        position: absolute;
-        right: 0;
-        width: 6.25em;
-        margin: 0;
-        border: 1px solid map-get($color, "standout");
+      #podcasts {
+        grid-column: span 4;
       }
-    }
-
-    .sidebar-social {
-      width: 1.25em;
-      height: 1.25em;
-    }
-
-    .sidebar-info-list {
-      &-item {
-        margin-bottom: 0.5em;
-      }
-
-      &-item-key {
-        font-weight: bold;
-      }
-
-      &-item-value {
-        font-size: 0.875em;
+      #nihongo {
+        grid-column: span 4;
       }
     }
   }
+
+  .separator {
+    position: relative;
+    height: 1px;
+
+    hr {
+      display: block;
+      position: absolute;
+      right: 0;
+      width: 6.25em;
+      margin: 0;
+      border: 1px solid map-get($color, "standout");
+    }
+  }
+
+  .sidebar-social {
+    width: 1.25em;
+    height: 1.25em;
+  }
+
+  .sidebar-info-list {
+    &-item {
+      margin-bottom: 0.5em;
+    }
+
+    &-item-key {
+      font-weight: bold;
+    }
+
+    &-item-value {
+      font-size: 0.875em;
+    }
+  }
+}
 </style>
