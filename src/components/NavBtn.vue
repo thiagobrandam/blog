@@ -1,7 +1,11 @@
 <template>
-  <div class='a-tt-u'>
-    <g-link class='nav-btn' :to='to' :exact="exact">
-      <div class='nav-btn__slot'><slot></slot></div>
+  <div class="uppercase">
+    <g-link class="nav-btn" :to="to" :exact="exact">
+      <div
+        class="nav-btn__slot table border border-solid border-coal px-2 py-1 w-full whitespace-no-wrap text-center"
+      >
+        <slot></slot>
+      </div>
     </g-link>
   </div>
 </template>
@@ -18,39 +22,31 @@ export default {
       required: false
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import "~/assets/css/_mixins.scss";
-
 .nav-btn {
-  $self: &;
+  @apply text-coal;
 
-  box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
-
-  @include mobile {
-    &__slot {
-      display: table;
-      border: 1px solid map-get($color, "standout");
-      padding: 0.25em 0.5em;
-      white-space:nowrap;
-      width: 100%;
-      text-align: center;
-    }
-
-    &.active, &:hover {
-      #{$self}__slot {
-        background-color: map-get($color, "standout");
-        color: white;
-      }
+  &.active,
+  &:hover {
+    @apply text-white;
+    .nav-btn__slot {
+      @apply bg-coal;
     }
   }
 
-  @include desktop {
-    font-weight: bold;
+  @screen lg {
+    @apply font-bold;
+
+    &.active,
+    &:hover {
+      @apply text-coal;
+      .nav-btn__slot {
+        @apply bg-white;
+      }
+    }
   }
 }
 </style>

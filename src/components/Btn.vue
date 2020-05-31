@@ -1,7 +1,7 @@
 <template>
-  <div class='a-tt-u'>
-    <g-link class='btn' :to='to'>
-      <div class='btn__slot'><slot></slot></div>
+  <div class="uppercase">
+    <g-link class="btn" :to="to">
+      <div class="btn__slot"><slot></slot></div>
     </g-link>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
       required: true
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -30,12 +30,13 @@ export default {
     display: table;
     border: 1px solid map-get($color, "standout");
     padding: 0.25em 0.5em;
-    white-space:nowrap;
+    white-space: nowrap;
     width: 100%;
     text-align: center;
   }
 
-  &.active--exact, &:hover {
+  &.active--exact,
+  &:hover {
     #{$self}__slot {
       background-color: map-get($color, "standout");
       color: white;

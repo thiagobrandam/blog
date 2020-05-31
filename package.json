@@ -12,11 +12,13 @@
     "@gridsome/remark-prismjs": "^0.1.0",
     "@gridsome/source-filesystem": "^0.6.0",
     "@gridsome/transformer-remark": "^0.3.3",
-    "gridsome": "^0.7.2"
+    "gridsome": "^0.7.2",
+    "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.2.0",
     "@gridsome/cli": "^0.2.3",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.1.0",
     "vue-svg-loader": "^0.12.0"
   }

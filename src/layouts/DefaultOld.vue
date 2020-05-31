@@ -1,5 +1,5 @@
 <template>
-  <div class="container layout">
+  <div class="layout">
     <div id="overlay"><slot name="overlay"></slot></div>
 
     <nav>

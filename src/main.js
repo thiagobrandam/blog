@@ -2,7 +2,8 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import { convertNumber } from "~/assets/js/jnumjs";
-import "~/assets/css/index.scss";
+// import "~/assets/css/index.scss";
+import "~/assets/css/main.scss";
 import DefaultLayout from "~/layouts/Default.vue";
 
 export default function(Vue, { router, head, isClient }) {
@@ -11,4 +12,5 @@ export default function(Vue, { router, head, isClient }) {
   Object.defineProperty(Vue.prototype, "$convert", {
     value: convertNumber
   });
+  head.bodyAttrs = { id: "#app" };
 }
