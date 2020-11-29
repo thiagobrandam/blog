@@ -5,4 +5,10 @@ layout: "layout.njk"
 
 # {{ title }}
 
-Hello
+## Blog posts
+
+<ul>
+  {%  for post in collections.posts %}
+  <li><a href="{{ post.url }}">{{ post.data.title }}</li>
+  {% endfor %}
+</ul>
