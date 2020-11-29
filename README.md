@@ -9,3 +9,7 @@ This is my blog project, built with `gridsome` !
 ### 2. Building the blog
 
 `npm run build`
+
+## Using Eleventy
+
+`npm run eleventy --input=11ty --output=_site`
