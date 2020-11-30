@@ -1,52 +1,25 @@
 <p>If you want to extract a Facebook Profile ID from a generic URL, you might be tempted to use a regular expression like the following:</p>
-<pre><code class="language-javascript">/(https?:\/\/)?(www\.)?(facebook|fb|m\.facebook)\.(com|me)\/([\w\-]*\/)*([\w\-\.]+)(\/)?/i;
-</code></pre>
+<pre class="language-javascript"><code class="language-javascript"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(https?:\/\/)?(www\.)?(facebook|fb|m\.facebook)\.(com|me)\/([\w\-]*\/)*([\w\-\.]+)(\/)?</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span></code></pre>
 <p>There are two problems with this approach in my opinion.
 One is that you're overusing a regular expression ability
 to match anything to check whether a particular string adheres to the <a href="https://tools.ietf.org/html/rfc3986">URI format</a> when a parser is a better tool for this kind of job.</p>
 <p>In fact, there's a parser available in Javascript (assuming you use an ECMA version that supports it).
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL/URL">It's the URL API</a>:</p>
-<pre><code class="language-javascript">var url = new URL(
-  &quot;https://classpert.com/udemy/courses/learning-functional-javascript-3rvMIl?lang=es&quot;
-);
-
-console.log(url.host);
-// =&gt; 'classpert.com'
-console.log(url.pathname);
-// =&gt; '/udemy/courses/learning-functional-javascript-3rvMIl'
-console.log(url.searchParams);
-// =&gt; URLSearchParams { 'lang' =&gt; 'es' }
-</code></pre>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><br>  <span class="token string">"https://classpert.com/udemy/courses/learning-functional-javascript-3rvMIl?lang=es"</span><br><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span>host<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// => 'classpert.com'</span><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// => '/udemy/courses/learning-functional-javascript-3rvMIl'</span><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span>searchParams<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token comment">// => URLSearchParams { 'lang' => 'es' }</span></code></pre>
 <p>It also works if you're using Node.</p>
 <p>If the parser doesn't return anything, you know it's not a valid URI. On top of that, you can check for host, path and query params formats separately. A lot less brittle.</p>
 <p>The other problem with using a regular expression to match the whole thing is that you will be matching undesired, invalid URLs, even if it's technically a
 valid URI.</p>
 <p>For example, using the above, overly generic regular expression, we have the following string incorrectly being detected as a valid Facebook Profile URL:</p>
-<pre><code class="language-javascript">&quot;https://facebook.com/profile.php/it-doesnt-make-sense&quot;;
-</code></pre>
+<pre class="language-javascript"><code class="language-javascript"><span class="token string">"https://facebook.com/profile.php/it-doesnt-make-sense"</span><span class="token punctuation">;</span></code></pre>
 <p>It's better to parse the URL and narrow down <strong>where</strong> to match using a more specific regular expression.</p>
 <p>For example, a Facebook Profile URL will probably be either one of these:</p>
-<pre><code class="language-javascript">// param based ID, path has to be profile.php
-&quot;https://www.facebook.com/profile.php?id=100018839703689&quot;;
-
-// path based ID, it has to come immediately after the host
-&quot;https://www.facebook.com/thiagobrandaodam&quot;;
-</code></pre>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// param based ID, path has to be profile.php</span><br><span class="token string">"https://www.facebook.com/profile.php?id=100018839703689"</span><span class="token punctuation">;</span><br><br><span class="token comment">// path based ID, it has to come immediately after the host</span><br><span class="token string">"https://www.facebook.com/thiagobrandaodam"</span><span class="token punctuation">;</span></code></pre>
 <p>Using the API URI:</p>
-<pre><code class="language-javascript">var url = new URL(&quot;https://www.facebook.com/thiagobrandaodam&quot;);
-
-// extract ID
-var id = url.match(/\/(?&lt;id&gt;[A-z\d](?:[A-z\d]|[.-](?=[A-z\d])){4,50})/).groups
-  .id;
-</code></pre>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"https://www.facebook.com/thiagobrandaodam"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// extract ID</span><br><span class="token keyword">var</span> id <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\/(?&lt;id>[A-z\d](?:[A-z\d]|[.-](?=[A-z\d])){4,50})</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span>groups<br>  <span class="token punctuation">.</span>id<span class="token punctuation">;</span></code></pre>
 <p>It uses the following regular expression to match for an ID:</p>
-<pre><code class="language-javascript">/\/[A-z\d]([A-z\d]|[.-](?=[A-z\d])){4,50}/;
-</code></pre>
+<pre class="language-javascript"><code class="language-javascript"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\/[A-z\d]([A-z\d]|[.-](?=[A-z\d])){4,50}</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span></code></pre>
 <p>The lookahead group <code>?=</code> ensures there are no consecutive dashes or dots.</p>
 <p>For the param-based URL, we have:</p>
-<pre><code class="language-javascript">var url = new URL(&quot;https://www.facebook.com/profile.php?id=100018839703689&quot;);
-
-// extract ID
-var id = url.pathname === &quot;/profile.php&quot; &amp;&amp; url.searchParams.get('id') ? url.searchParams.get('id').match(/(?&lt;id&gt;^\d{15}$)/).groups.id;
-</code></pre>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"https://www.facebook.com/profile.php?id=100018839703689"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// extract ID</span><br><span class="token keyword">var</span> id <span class="token operator">=</span> url<span class="token punctuation">.</span>pathname <span class="token operator">===</span> <span class="token string">"/profile.php"</span> <span class="token operator">&amp;&amp;</span> url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span> <span class="token operator">?</span> url<span class="token punctuation">.</span>searchParams<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(?&lt;id>^\d{15}$)</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span>groups<span class="token punctuation">.</span>id<span class="token punctuation">;</span></code></pre>
 <p>The param-based ID is a 15 digit sequence.</p>

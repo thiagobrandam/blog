@@ -3,12 +3,13 @@ title: My first blog post
 layout: "layout.njk"
 ---
 
-# {{ title }}
+<div>
+  {{ title }} <p><a href="https://google.com">a link</a></p>
+</div>
 
-## Blog posts
-
-<ul>
-  {%  for post in collections.posts %}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</li>
-  {% endfor %}
-</ul>
+```js/1,3-5
+function myFunction() {
+  // …
+  return true;
+}
+```

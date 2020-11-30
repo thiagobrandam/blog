@@ -1,0 +1,37 @@
+html {
+  font-family: "Barlow Condensed", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  background-color: var(--bg);
+  color: var(--txt);
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+h2 {
+  font-size: 2.4rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  font-family: "EB Garamond", serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+p a {
+  color: var(--a);
+}
