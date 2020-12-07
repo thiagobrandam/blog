@@ -1,6 +1,7 @@
 :root {
-  --bg: #fbfbfb;
-  --a: #e63946;
-  --txt: #333;
-  --bp: 992px;
+  --bg: #fbfbfb; // background-color
+  --a: #e63946; // anchor
+  --txt: #333; // text
+  --bp: 992px; // breakpoint for responsiveness
+  --so: var(--txt); // standout color
 }

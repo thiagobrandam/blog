@@ -475,6 +475,7 @@ template {
   --a: #e63946;
   --txt: #333;
   --bp: 992px;
+  --so: var(--txt);
 }
 
 html {

@@ -1,0 +1,23 @@
+.btn {
+  $self: &;
+
+  box-sizing: border-box;
+  display: inline-block;
+
+  &__slot {
+    display: table;
+    border: 1px solid var(--so);
+    padding: 0.25em 0.5em;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+  }
+
+  &.active--exact,
+  &:hover {
+    #{$self}__slot {
+      background-color: var(--so);
+      color: white;
+    }
+  }
+}

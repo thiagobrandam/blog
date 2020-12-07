@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
 
   return {
+    markdownTemplateEngine: "njk",
     dir: {
       input: "src",
       output: "public"
