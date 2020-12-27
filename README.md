@@ -1,6 +1,6 @@
 # thiagobrandam's blog
 
-This is my blog project, built with `gridsome` !
+This is my blog project, built with `11ty` !
 
 ### 1. Running the blog locally
 

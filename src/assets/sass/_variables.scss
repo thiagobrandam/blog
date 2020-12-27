@@ -1,7 +1,15 @@
+// interop with css that
+// are not property values
+$bg: #fbfbfb; // background-color
+$a: #e63946; // anchor
+$txt: #333; // text
+$bp: 992px; // breakpoint for responsiveness
+$so: $txt; // standout color
+
 :root {
-  --bg: #fbfbfb; // background-color
-  --a: #e63946; // anchor
-  --txt: #333; // text
-  --bp: 992px; // breakpoint for responsiveness
-  --so: var(--txt); // standout color
+  --bg: #{$bg};
+  --a: #{$a};
+  --txt: #{$txt};
+  --bp: #{$bp};
+  --so: var(--txt);
 }

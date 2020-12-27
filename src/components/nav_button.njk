@@ -1,0 +1,7 @@
+{% macro build(to, title, class='') %}
+  <div class='a-tt-u'>
+    <a class="nav-btn {{ class }}" href="{{ to }}">
+      <div class="nav-btn__slot">{{ title }}</div>
+    </a>
+  </div>
+{% endmacro %}

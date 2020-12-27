@@ -1,0 +1,60 @@
+:root {
+  --mg: 10rem;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  height: calc(100% - 2 * var(--mg));
+  justify-content: center;
+}
+
+// desktop
+@media (min-width: $bp) {
+  body {
+    max-width: $bp;
+    margin: var(--mg) auto;
+    gap: 3rem;
+    grid:
+      "nav main" max-content
+      "aside main" auto
+      / 1fr 3fr;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+// mobile
+@media (max-width: $bp) {
+  body {
+    grid:
+      "nav" max-content
+      "main" auto
+      "aside" 0px
+      / 100%;
+  }
+
+  aside {
+    display: none;
+  }
+}
+
+nav {
+  grid-area: nav;
+}
+aside {
+  grid-area: aside;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
